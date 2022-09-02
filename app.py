@@ -1,4 +1,4 @@
-from crypt import methods
+# from crypt import methods
 from distutils.log import debug
 import pickle
 from flask import Flask, request, app, jsonify, url_for, render_template
@@ -16,7 +16,7 @@ scalar = pickle.load(open('scaling.pkl', 'rb'))
 def home():
     return render_template('home.html')
 
-@app.route('/predict_api', methods=['POSTS'])
+@app.route('/predict_api', methods=['POST'])
 def predit_api():
     data = request.json['data']
     print(data)
